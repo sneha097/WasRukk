@@ -1,0 +1,1115 @@
+<!DOCTYPE html>
+<html lang="zxx">
+<head>
+    <meta charset=utf-8>
+    <meta http-equiv=X-UA-Compatible content="IE=edge">
+    <meta name=viewport content="width=device-width, initial-scale=1">
+    <title>TrashPicker</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="trashpicker-logo.png">
+    <link rel="stylesheet" type="text/css" href="https://cutt.ly/FMx7tis">
+    <link rel="stylesheet" type="text/css" href="https://cutt.ly/EMx7c9B">
+    <link rel="stylesheet" type="text/css" href="https://cutt.ly/HMx7UGQ">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <style type="text/css">
+        #call {
+            position: fixed;
+            left: 20px;
+            z-index: 10000000000000000000;
+            height: 50px;
+            text-align: center;
+            width: 50px;
+            font-size: 35px;
+            background-color: #fb8000;
+            border-radius: 31px;
+            bottom: 80px !important;
+            z-index: 10000000000;
+            -webkit-animation: mymove 3s;
+            -webkit-animation-iteration-count: infinite;
+            animation: mymove 3s;
+            animation-iteration-count: infinite;
+        }
+        #whatsapp {
+            position: fixed;
+            left: 20px;
+            z-index: 10000000000000000000;
+            height: 50px;
+            text-align: center;
+            width: 50px;
+            font-size: 35px;
+            background-color: #0b9138;
+            border-radius: 31px;
+            bottom: 20px;
+            z-index: 10000000000;
+            -webkit-animation: mymove 3s;
+            -webkit-animation-iteration-count: infinite;
+            animation: mymove 3s;
+            animation-iteration-count: infinite;
+        }
+        @media(max-width: 468px){
+            #top_mobile { width: 45% !important;text-align: left; }
+            #top_email { width: 55% !important;text-align: right; }
+            .mainLogo { width: 150px !important; }
+            .header1 { height: 100px; }
+            .sell_scrap_hed { font-size: 16px; }
+            .sml_text { font-size: 13px; }
+            .sell_scrap_input .form-group input { height: 38px !important; }
+            .sell_scrap_pos { text-align: center !important; }
+        }
+        .blog-text { background: transparent !important; }
+        .header1 { height: 105px; }
+        .blog-text .date { margin-bottom: 5px; }
+    </style>
+    
+<!-- Add icon library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare .com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:200,900');
+
+:root {
+  --text-color: rgb(255, 255, 255);
+  --shadow-color: rgba(0, 0, 0, 0.4);
+  --btn-color: hsl(135, 80%, 42%);
+  --bg-color: #ffffff;
+}
+
+
+button {
+  position:relative;
+  padding: 12px 30px;  
+  border: none;
+  background: none;
+  cursor: pointer;
+  margin-left: 35px;
+  font-family: "Source Code Pro";
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: 30px;  
+  color: var(--text-color);
+  margin-bottom: 0px;
+  background-color: var(--btn-color);
+  box-shadow: var(--shadow-color) 2px 2px 22px;
+  border-radius: 4px; 
+  z-index: 0;  
+  overflow: hidden;  
+  width: 132px; 
+  height: 45px;
+}
+
+button:focus {
+  outline-color: transparent;
+  box-shadow: var(--btn-color) 2px 2px 22px;
+}
+
+.right::after, button::after {
+  content: var(--content);
+  display: block;
+  position: absolute;
+  white-space: nowrap;
+  padding: 42px 55px;
+  pointer-events:none;
+}
+
+button::after{
+  font-weight: 200;
+  top: -30px;
+  left: -20px;
+} 
+
+.right, .left {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+}
+.right {
+  left: 66%;
+}
+.left {
+  right: 66%;
+}
+.right::after {
+  top: -30px;
+  left: calc(-66% - 20px);
+  
+  background-color: var(--bg-color);
+  color:transparent;
+  transition: transform .4s ease-out;
+  transform: translate(0, -90%) rotate(0deg)
+}
+
+button:hover .right::after {
+  transform: translate(0, -47%) rotate(0deg)
+}
+
+button .right:hover::after {
+  transform: translate(0, -50%) rotate(-7deg)
+}
+
+button .left:hover ~ .right::after {
+  transform: translate(0, -50%) rotate(7deg)
+}
+
+/* bubbles */
+button::before {
+  content: '';
+  pointer-events: none;
+  opacity: .6;
+  background:
+    radial-gradient(circle at 20% 35%,  transparent 0,  transparent 2px, var(--text-color) 3px, var(--text-color) 4px, transparent 4px),
+    radial-gradient(circle at 75% 44%, transparent 0,  transparent 2px, var(--text-color) 3px, var(--text-color) 4px, transparent 4px),
+    radial-gradient(circle at 46% 52%, transparent 0, transparent 4px, var(--text-color) 5px, var(--text-color) 6px, transparent 6px);
+
+  width: 100%;
+  height: 300%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  animation: bubbles 5s linear infinite both;
+}
+
+@keyframes bubbles {
+  from {
+    transform: translate();
+  }
+  to {
+    transform: translate(0, -66.666%);
+  }
+}
+
+
+
+</style>
+    
+</head>
+
+<body>
+    <a href="https://api.whatsapp.com/send?phone=+917080130973&amp;text=Hi, I am visiting your website www.WasRuk.com" id="whatsapp" class="fab fa-whatsapp" style="padding-top: 8px; color:#ffffff!important;" rel="nofollow" target="_blank"></a>      
+    <a href="tel:+917080130973" id="call" class="fa fa-phone" style="padding-top: 8px; color:#ffffff!important;background: #3ab44a;" rel="nofollow" target="_blank"></a>
+    <div class="preloader"><div class="spinner"></div></div>
+    <div class="page-wrapper">
+        <header class="header1">
+            <nav class="navbar nav-solid mb-0 pt-0" style="border: 0px;border-radius: 0px;padding-bottom: 7px;">
+                <div class="container-fluid" style="padding: 5px 0px;background: #000;">
+                    <div class="row justify-content-center">
+                        <div id="top_mobile" style="width: 50%;float:left;text-align: center;">
+                            <span><a href="tel:+917080130973" style="color: #fff;"><i class="fas fa-phone"></i> +91 7080130973</a></span>
+                        </div>
+
+                        <div id="top_email" style="width: 50%;float: right;text-align: center;">
+                            <span><a href="satyendrasinghfzd184@gmail.com" style="color: #fff;"><i class="fas fa-envelope"></i> satyendrasinghfzd184@gmail.com</a></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-fluid" style="margin-top: 15px;">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-menu"> <span></span>  <span></span>  <span></span>
+                        </button>
+                        <a class="navbar-brand" href="TrashPicker.html">
+                          <!-- <h1>Kabadi Kart</h1> -->
+                          <img class="mainLogo" src="trashpicker-logo.png" style="width: 130px;height: 95px;">
+                          <!-- <p>Kabad Becho, Shaan se.</p> -->
+                        </a>
+                    </div>
+                    <div class="collapse navbar-collapse" id="main-menu">
+
+                        <ul class="nav navbar-nav f1 mainMenu text-capitalize">
+                            <li class="active"> <a href="TrashPicker.html">Home</a>
+                            </li>
+                            <li><a href="about.html">about</a>                
+                            </li>
+                            <li> <a href="login/login.html">dasboard</a>
+                                
+                            </li>
+                            <!-- <li><a href="https://kabadikart.com/gallery">gallery</a>
+                            </li> -->
+                            <li> <a href="Blogs.html">blog</a>
+                            </li>
+                            <li> <a href="Glassmorphism Website/why.html">Why TrashPicker?</a>
+                            </li>
+                            <li><a href="contact.html">contact</a>
+                            </li>
+                        </ul>
+                        <ul >
+                           
+                              <form>
+                              <button class = "btn"style="--content: 'Request';" formaction="login/login.html" >
+                                <div class="left"></div>
+                                  Request
+                                <div class="right"></div>
+                              </button>
+                           </form>
+
+                        </ul>
+                        
+                        
+                    </div>
+                </div>
+            </nav>
+        </header><style>
+    @media(max-width:468px){
+        .banner-carousel { max-height:200px !important; }
+        .steps {padding:0px; }
+        .sell_scrap_w { margin-top: 40px; }
+        .volunteer-tab .tab-list a i { width:36px; }
+    }
+    @media(min-width:471px){
+        #sell_scrap_container { margin-top: -280px !important;}
+    }
+    @media(max-width:1199px){
+        .hide-mobile { display:none; }
+        .banner-carousel { max-height:550px; }
+    }
+    @media(min-width: 1200px){
+      .intro1.pb-100{ margin-top: -50px !important; }
+    }
+</style>
+<div class="main-slider ms1">
+    <div class="banner-carousel owl-carousel" style="background-image:unset;">
+        <div class="ms1-item" style="background: url('6289.jpg');background-size:100%;background-repeat: no-repeat;padding-top:30px; margin-top: -30px;">
+          <div class="pos-r g-table">
+             <div class="">
+                <div class="container crop">
+                </div>
+             </div>
+          </div>
+        </div>
+     
+        <div class="ms1-item" style="background: url('7934.jpg');background-size:100%;background-repeat: no-repeat;padding-top:30px; margin-top: -30px;">
+          <div class="pos-r g-table">
+             <div class="">
+                <div class="container crop">
+                </div>
+             </div>
+         </div>
+       </div>
+           <div class="ms1-item" style="background: url('30711.jpg');background-size:100%;background-repeat: no-repeat;padding-top:30px; margin-top: -30px;">
+         <div class="pos-r g-table">
+            <div class="">
+               <div class="container crop">
+               </div>
+            </div>
+         </div>
+      </div>
+     
+    </div>
+</div>
+
+ <div class="page-content">
+    <div class="container" id="sell_scrap_container">
+       <div class="sell_scrap_w" style="margin-bottom:165px;">
+          <div class="sell_scrap_pos">
+                                                             <div class="step1" id="step1_form"  >
+                <form action="" id="form_0" method="post" accept-charset="utf-8">
+                   <div class="step_tbs">
+                      <p class="steps active"><b>01</b><span>Mobile No. </span></p>
+                      <p class="steps"><b>02</b><span>Address </span></p>
+                      <p class="steps"><b>03</b><span>Schedule </span></p>
+                      <p class="steps"><b>04</b><span>Load</span></p>
+                   </div>
+                   <div class="row">
+                      <div class="col-12 col-lg-3">
+                         <div class="sell_scrap_hed">
+                            Request for your waste 
+                         </div>
+                         <p class="sml_text mt-2 poppins">In just 4 simple steps...</p>
+                      </div>
+                      <div class="col-12 col-lg-6">
+                         <div class="sell_scrap_input">
+                            <div class="form-group" style="margin-bottom: 0px;">
+                               <input type="text" class="form-control" id="phone" name="mobile_number" placeholder="Enter Your Mobile Number *" aria-describedby="prepend1" value="" style="height: 50px;" required="" pattern="[0-9]+" maxlength="10" minlength="10">
+                            </div>
+                            <p class="input_sml_txt mt-2 poppins">Service Available in all places</p>
+                         </div>
+                      </div>
+                      <div class="col-12 col-lg-3">
+                         <div>
+                            <input id="Submit1" type="submit" value="Proceed" class="sell_button">
+                         </div>
+                      </div>
+                   </div>
+                </form>
+             </div>
+             <div class="step2 dn" id="step2_form" style="display:none" >
+                <a href="#sell_1" id="sell_1"></a>
+                <form action="" id="form_2" method="post" accept-charset="utf-8">
+                   <div class="step_tbs">
+                      <p class="steps active"><b>01</b><span>Mobile No. </span></p>
+                      <p class="steps active"><b>02</b><span>Address </span></p>
+                      <p class="steps"><b>03</b><span>Schedule </span></p>
+                      <p class="steps"><b>04</b><span>Load</span></p>
+                   </div>
+                   <div class="row">
+                      <div class="col-12 col-lg-3">
+                         <p class="back_btn"><a href="#" onclick="$('.step1').show();$('.step2').hide()"></a></p>
+                         <div class="sell_scrap_hed">Request for your waste</div>
+                         <p class="sml_text mt-2 poppins">In just 4 easy steps...</p>
+                      </div>
+                      <div class="col-12 col-lg-6">
+                         <div class="sell_scrap_input form-row">
+                            <div class="col-sm-4">
+                               <div class="form-group">
+                                  <input type="text" class="form-control" name="name" id="name" placeholder="Name *" value=""style="height: 50px;" required="">
+                               </div>
+                            </div>
+                            <div class="col-sm-4">
+                               <div class="form-group">
+                                  <input type="text" class="form-control" name="flat_number" id="house_no" placeholder="Flat/House Number *" value=""style="height: 50px;" required="">
+                               </div>
+                            </div>
+                            <div class="col-sm-4">
+                               <div class="form-group">
+                                  <input name="address" required class="form-control" type="text" placeholder="Street/Area *" value=""style="height: 50px;"> 
+                               </div>
+                            </div>
+                            <div class="col-sm-4">
+                               <div class="form-group">
+                                  <input type="text" name="landmark" required value="" class="form-control" id="city" placeholder="Landmark *"style="height: 50px;"> 
+                               </div>
+                            </div>
+                            <div class="col-sm-4">
+                               <div class="form-group">
+                                  <select name="state_id" required onchange="bind_data(this.value,'home/bind_city','city_list','loader_city','neighborhood_country');" class="form-control" id="state_id" style="height: 50px;">
+                                     <option value="" selected="selected">Select State *</option>
+                                     <option value="Delhi">Delhi</option>
+                                     <option value="Uttar Pradesh">Uttar Pradesh</option>
+                                     
+                                  </select>
+                               </div>
+                            </div>
+                            <div class="col-sm-4">
+                               <div class="form-group">
+                                  <span id="loader_city"></span>
+                                  <span id="city_list">
+                                     <select name="city_id" id="city_id" required class="form-control state" style="height: 50px;">
+                                        <option value="" selected="selected">Select City *</option>
+                                        <option value="Noida">Noida</option>
+										<option value="Greater Noida">Greater Noida</option>
+										<option value="Delhi">Delhi</option>
+                                        <option value="Ayodhya">Ayodhya</option>
+                                        <option value="Lucknow">Lucknow</option>
+                                        <option value="Kanpur">Kanpur</option>
+                                     </select>
+                                  </span>
+                               </div>
+                            </div>
+                            <div class="col-sm-4">
+                               <div class="form-group">
+                                  <input name="pin_code" type="text" class="form-control" required id="pin_code" placeholder="Pin Code *" value="" style="height: 50px;"> 
+                               </div>
+                            </div>
+                            <div class="col-sm-8">
+                               <div class="form-group">
+                                  <p class="input_sml_txt mt-2 poppins">Service Available all places</p>
+                               </div>
+                            </div>
+                         </div>
+                      </div>
+                      <div class="col-12 col-lg-3">
+                         <div>
+                            <input id="Submit2" type="submit" value="Proceed" class="sell_button">
+                         </div>
+                      </div>
+                   </div>
+                </form>
+             </div>
+             <div class="step3 dn" id="step3_form" style="display:none">
+                <a href="#sell_3" id="sell_3"></a>
+                <form action="" id="form_3" method="post" accept-charset="utf-8">
+                   <div class="step_tbs">
+                      <p class="steps active"><b>01</b><span>Mobile No. </span></p>
+                      <p class="steps active"><b>02</b><span>Address </span></p>
+                      <p class="steps active"><b>03</b><span>Schedule </span></p>
+                      <p class="steps"><b>04</b><span>Load </span></p>
+                   </div>
+                   <div class="row">
+                      <div class="col-12 col-lg-3">
+                         <p class="back_btn"><a href="#" onclick="$('.step2').show();$('.step3').hide()"></a></p>
+                         <div class="sell_scrap_hed">
+                            Request for your waste
+                         </div>
+                         <p class="sml_text mt-2 poppins">In just 4 easy steps...</p>
+                      </div>
+                      <!-- <div class="col-12 col-lg-2">
+                         <div class="sell_scrap_input">
+                            <div class="form-group input_group_2">
+                               <input type="date" class="start_date1 form-control" name="from_date" value="" id="from" placeholder="Pickup date *" aria-describedby="prepend1" required="" style="height: 50px;">
+                            </div>
+                         </div>
+                      </div> -->
+                      <div class="col-12 col-lg-2">
+                         <div class="form-group">
+                            <select name="from_time" class="form-control select-slot" style="font-size:14px;height: 50px; ">
+                               <option value="" selected="">Select Pickup Time</option>
+                               <option value="9AM to 7PM">9AM to 7PM</option>
+                            </select>
+                         </div>
+                      </div>
+                      <div class="col-12 col-lg-2">
+                         <div class="form-group">
+                            <input type="text" class="form-control" name="email"  required id="email" placeholder="Email *" style="padding: 11px;height: 50px;" value="">
+                         </div>
+                      </div>
+                      <div class="col-12 col-lg-3">
+                         <div>
+                            <input name="submit3" type="submit" value="Proceed" class="sell_button">
+                         </div>
+                      </div>
+                   </div>
+                </form>
+             </div>
+             <div class="step4 dn" id="step4_form" style="display:none">
+                <a href="#sell_4" id="sell_4"></a>
+                <form action="" id="form_4" method="post" accept-charset="utf-8">
+                   <div class="step_tbs">
+                      <p class="steps active"><b>01</b><span>Mobile No. </span></p>
+                      <p class="steps active"><b>02</b><span>Address </span></p>
+                      <p class="steps active"><b>03</b><span>Schedule </span></p>
+                      <p class="steps active"><b>04</b><span> </span></p>
+                   </div>
+                   <div class="row">
+                      <div class="col-12 col-lg-3">
+                         <p class="back_btn"><a href="#" onclick="$('.step2').show();$('.step3').hide()"></a></p>
+                         <div class="sell_scrap_hed">
+                            Request for your waste
+                         </div>
+                         <p class="sml_text mt-2 poppins">In just 4 easy steps...</p>
+                      </div>
+                      <div class="col-12 col-lg-4">
+                         <div class="form-group">  
+                            <input type="text" class="form-control" name="cat" id="cat" placeholder="Type Of Scrap *" style="padding: 11px;" value="">  
+                         </div>
+                      </div>
+                      <div class="col-12 col-lg-2">
+                         <div class="mt-2 text-left">
+                            <div class=" form-check">
+                               <label class="mr-2">
+                               
+                            </div>
+                         </div>
+                      </div>
+                      <div class="col-12 col-lg-3">
+                         <div>
+                            <input id="submit4" type="submit" value="Submit" class="sell_button">
+                         </div>
+                      </div>
+                   </div>
+                </form>
+             </div>
+          </div>
+       </div>
+    </div>
+    <div class="container">
+                <div class="row pos-r">
+                    <div class="col-lg-7 pr-0">
+                        <div class="process-txt">
+                            <div class="section-header">
+                                <h2 class="f2 c1">About Us?</h2>
+                                <h1 class="f1 fw-7 c4">We are revolutionising the mass by changing the behaviour and mindset towards waste.  </h1>
+                            </div>
+                            <p class="txt-normal">TrashPicker will create a family ranking based on their contribution towards segregation.
+                              Top families will be rewarded and appreciated by government.We will ask the people to segregate the waste at the source in atleast three categories and in 
+                           in written we will provide them with rewards. </p>
+                            <ul class="c4 f1 mt-55">
+                                <li class="fw-6 mb-35 clearfix">    <i class="nivio-checked"></i>  <span>Protect and enhance environment for future generations.</span>
+                                </li>
+                                <li class="fw-6 clearfix">  <i class="nivio-checked"></i>  <span>We will bridge gap between public and government with the help of our website.</span>
+                                </li>
+                            </ul>
+                            <div class="process-img">
+                                <img src="d.jpg" alt="">
+                                <div class="customers bg3 c4 f1">
+                                    <h2 class="fw-4"></h2>
+                                    <span class="fw-6">Waste is only waste if we waste it</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+    <div class="intro1 pb-100" style="padding-top: 130px;padding-bottom: 25px;">
+       <div class="container">
+          <div class="row">
+             <div class="section-header text-center mb-60">
+                <h2 class="f2 c1">welcome to TrashPicker</h2>
+                <h1 class="f1 fw-7 c4">How it Works?</h1>
+             </div>
+             <div class="col-md-4 col-sm-6 col-sm-offset-3 col-md-offset-0 col-xs-offset-0 mb-sm-50">
+                <div class="item">
+                   <div class="item-thumb">
+                      <a href="#">
+                      <img src="https://kabadikart.com/assets/front/img/intro/05.jpg" alt="intro thumb">
+                      </a>
+                   </div>
+                   <div class="item-txt text-center f1">
+                      <h2 class="fw-6">Schedule Pickup Waste</h2>
+                      <p class="fw-4">On website Fill simple four step form for scheduling pickup date and time.</p>
+                      <a href="#" class="rdm">    <i class="fa fa-angle-right"></i>
+                      </a>
+                   </div>
+                </div>
+             </div>
+             <div class="col-md-4 col-sm-6 mb-xs-50">
+                <div class="item">
+                   <div class="item-thumb">
+                      <a href="#">
+                      <img src="c.jpeg" alt="intro thumb" width="1000px">
+                      </a>
+                   </div>
+                   <div class="item-txt text-center f1">
+                      <h2 class="fw-6">Pickup Guy at Doorstep</h2>
+                      <p class="fw-4">Our Pickup Guy will reach at your doorstep on scheduled date & time.</p>
+                      <a href="#" class="rdm">    <i class="fa fa-angle-right"></i>
+                      </a>
+                   </div>
+                </div>
+             </div>
+             <div class="col-md-4 col-sm-6 mb-xs-50">
+                <div class="item">
+                   <div class="item-thumb">
+                      <a href="#">
+                      <img src="f.jpeg" alt="intro thumb">
+                      </a>
+                   </div>
+                   <div class="item-txt text-center f1">
+                      <h2 class="fw-6">Get credit points for Waste</h2>
+                      <p class="fw-4">As the number of credit points will increase your possiblity of getting rewards will increase
+                       people with good credit score will be appreciated by the government/authority.
+                      </p>
+                      <a href="#" class="rdm">    <i class="fa fa-angle-right"></i>
+                      </a>
+                   </div>
+                </div>
+             </div>
+          </div>
+       </div>
+    </div>
+        <div class="intro2" style="padding-top: 0px;margin-top: -50px;">
+      <div class="items-area text-center f1" style="margin-top: 0px;padding-top: 40px;padding-bottom: 40px;">
+          <div class="container">
+             <div class="section-header text-center mb-60">
+                <h1 class="f1 fw-7 c4">Why Choose TrashPicker?</h1>
+             </div>
+
+            <div class="row">
+              <div class="col-md-4 col-sm-6 mb-sm-50">
+                <div class="item">  <i class="fas fa-balance-scale fa-5x" style="color:#6abe52;"></i>
+                  <p class="fw-4 c4">We Use Digital Weigh Scale</p>
+                  <a href="#" class="rdm">  <i class="fa fa-angle-right"></i>
+                  </a>
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-6 mb-sm-50">
+                <div class="item">  <i class="fas fa-money-check fa-5x" style="color:#6abe52;"></i>
+                  <p class="fw-4 c4">Provides you credit points.</p>
+                  <a href="#" class="rdm">  <i class="fa fa-angle-right"></i>
+                  </a>
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-6 col-sm-offset-3 col-xs-offset-0 col-md-offset-0">
+                <div class="item">  <i class="fas fa-mobile-alt fa-5x" style="color:#6abe52;"></i>
+                  <p class="fw-4 c4">Schedule Pickup Through Website</p>
+                  <a href="#" class="rdm">  <i class="fa fa-angle-right"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    
+    <div class="hotline" style="padding-bottom: 50px;">
+       <div class="txt-row">
+          <div class="container">
+             <div class="row">
+                <div class="col-lg-6">
+                   <div class="item">
+                      <div class="section-header">
+                         <h2 class="f2 c1">time to change</h2>
+                         <h1 class="f1 fw-7 c4">Its time to recognize the value of waste</h1>
+                      </div>
+                      <p class="f1 fw-4 mt-45">Give us your waste  and we will turn it into a valuable resource and it will be helpful
+                        in building other resources.
+                      </p>
+                   </div>
+                </div>
+             </div>
+          </div>
+       </div>
+       <div class="contac-row mt-60">
+          <div class="container">
+             <div class="row pos-r">
+                <div class="col-lg-6 pos-s col-lg-push-6">
+                   <div class="vdo">
+                      <img src="https://kabadikart.com/assets/front/img/vdo/01.jpg" alt="">
+                      <a href="#" class="play-button html5lightbox">  <i class="fa fa-play c4"></i>
+                      </a>
+                   </div>
+                </div>
+                <div class="col-lg-6 col-lg-pull-6">
+                   <div class="item clearfix">
+                      <div class="icon-box">  <span>
+                         <i class="nivio-phone-call"></i>
+                         </span>
+                      </div>
+                      <div class="txt-box f1">
+                         <h2 class="fw-6 cw">For any Queries call: <span><a href="#" class="c3 fw-7">+91</a></span></h2>
+                      </div>
+                   </div>
+                </div>
+             </div>
+          </div>
+       </div>
+    </div>
+
+
+    <div class="facts-area text-center text-capitalize" style="margin-top: 0px;padding-top: 20px;padding-bottom: 30px;">
+       <div class="container">
+          <div class="row">
+             <div class="col-md- col-sm-12">
+                <div class="fact-container mb-sm-50">
+                   <div class="single-fact">
+                      <span class="fas fa-user"></span>
+                      <h3 class="fact-title c3 f2 fw-3 text-capitalize" style="color:#fff;">Ujjwal Soni</h3>
+                      <div class="numscroller fact-num cw f1" data-slno='1' data-min="0" data-max="1" data-delay='2' data-increment="5">0</div>
+                   </div>
+                </div>
+             </div>
+             <div class="col-md-3 col-sm-6">
+                <div class="fact-container mb-sm-50">
+                   <div class="single-fact">
+                      <span class="fas fa-user"></span>
+                      <h3 class="fact-title c3 f2 fw-3 text-capitalize">Satyendra Singh</h3>
+                      <div class="numscroller fact-num cw f1" data-slno='2' data-min="0" data-max="2" data-delay='2' data-increment="3">0</div>
+                   </div>
+                </div>
+             </div>
+             <div class="col-md-3 col-sm-6">
+                <div class="fact-container mb-xs-50">
+                   <div class="single-fact">
+                      <span class="fas fa-user"></span>
+                      <h3 class="fact-title c3 f2 fw-3 text-capitalize">Aviral Katiyar</h3>
+                      <div class="numscroller fact-num cw f1" data-slno='15' data-min="0" data-max="3" data-delay='2' data-increment="4">0</div>
+                   </div>
+                </div>
+             </div>
+             <div class="col-md-3 col-sm-6">
+                <div class="fact-container">
+                   <div class="single-fact">
+                      <span class="fas fa-user"></span>
+                      <h3 class="fact-title c3 f2 fw-3 text-capitalize"> Shivansh Rastogi</h3>
+                      <div class="numscroller fact-num cw f1" data-slno='35' data-min="0" data-max="4" data-delay='2' data-increment="1">0</div>
+                   </div>
+                </div>
+             </div>
+             <div class="col-md-3 col-sm-6">
+               <div class="fact-container">
+                  <div class="single-fact">
+                     <span class="fas fa-user"></span>
+                     <h3 class="fact-title c3 f2 fw-3 text-capitalize"> Varun Gupta</h3>
+                     <div class="numscroller fact-num cw f1" data-slno='35' data-min="0" data-max="5" data-delay='2' data-increment="1">0</div>
+                  </div>
+               </div>
+            </div>
+          </div>
+       </div>
+    </div>
+
+    <div class="testimony" style="padding-top: 40px;padding-bottom: 30px;">
+       <div class="container">
+          <div class="section-header text-center">
+             <h2 class="f2 c1">testimonials</h2>
+             <h1 class="f1 fw-7 c4">What customers says</h1>
+          </div>
+          <div class="row">
+             <div class="col-md-8 col-md-offset-2 col-sm-offset-0 col-xs-offset-0">
+                <div class="testimonial owl-carousel">
+                   <div class="pw-item f1 text-center">
+                      <p>This is due to their excellent service, competitive pricing and customer support. It’s throughly refresing to get such a personal touch. Novio in my opinion deserves support for its projects.</p>
+                      <img src="https://kabadikart.com/assets/front/img/testimony/01.png" alt="">
+                      <p class="name fw-7 c1">Vivek Kumar</p>
+                   </div>
+                   <div class="pw-item f1 text-center">
+                      <p>This is due to their excellent service, competitive pricing and customer support. It’s throughly refresing to get such a personal touch. Novio in my opinion deserves support for its projects.</p>
+                      <img src="https://kabadikart.com/assets/front/img/testimony/02.png" alt="">
+                      <p class="name fw-7 c1">Akmal Khan</p>
+                   </div>
+                   <div class="pw-item f1 text-center">
+                      <p>This is due to their excellent service, competitive pricing and customer support. It’s throughly refresing to get such a personal touch. Novio in my opinion deserves support for its projects.</p>
+                      <img src="https://kabadikart.com/assets/front/img/testimony/03.png" alt="">
+                      <p class="name fw-7 c1">Susan Singh</p>
+                   </div>
+                </div>
+             </div>
+          </div>
+       </div>
+    </div>
+
+    <div class="blog" style="padding-top: 50px;margin-bottom: 50px;">
+       <div class="container">
+          <div class="section-header text-center">
+             <h2 class="f2 c1">Blogs & articles</h2>
+             <h1 class="f1 fw-7 c4">Recent posts and updates</h1>
+          </div>
+          <div class="blog-post owl-carousel">
+             <div class="col-md-4">
+                <div class="blog-card">
+                   <a href="single-news.html">
+                   <img src="https://kabadikart.com/assets/front/img/blog/011.jpg" alt="">
+                   </a>
+                   <div class="blog-text">
+                      <div class="date f1 bg3">
+                         <p class="fw-6">Nov</p>
+                         <p class="fw-7">10</p>
+                      </div>
+                      <a href="single-news.html" class="title f1 fw-7 cw"> <span>Eco System Responsible For Green Energy</span>
+                      </a>
+                   </div>
+                </div>
+             </div>
+             <div class="col-md-4">
+                <div class="blog-card">
+                   <a href="single-news.html">
+                   <img src="https://kabadikart.com/assets/front/img/blog/02.jpg" alt="">
+                   </a>
+                   <div class="blog-text">
+                      <div class="date f1 bg3">
+                         <p class="fw-6">Nov</p>
+                         <p class="fw-7">12</p>
+                      </div>
+                      <a href="single-news.html" class="title f1 fw-7 cw"> <span>Don’t Throw Away, Recycle For Your Another Day</span>
+                      </a>
+                   </div>
+                </div>
+             </div>
+             <div class="col-md-4">
+                <div class="blog-card">
+                   <a href="single-news.html">
+                   <img src="https://kabadikart.com/assets/front/img/blog/03.jpg" alt="">
+                   </a>
+                   <div class="blog-text">
+                      <div class="date f1 bg3">
+                         <p class="fw-6">Nov</p>
+                         <p class="fw-7">11</p>
+                      </div>
+                      <a href="single-news.html" class="title f1 fw-7 cw"> <span>You Have The Power Today To Change Tomorrow</span>
+                      </a>
+                   </div>
+                </div>
+             </div>
+             <div class="col-md-4">
+                <div class="blog-card">
+                   <a href="single-news.html">
+                   <img src="https://kabadikart.com/assets/front/img/blog/04.jpg" alt="">
+                   </a>
+                   <div class="blog-text">
+                      <div class="date f1 bg3">
+                         <p class="fw-6">Jul</p>
+                         <p class="fw-7">30</p>
+                      </div>
+                      <a href="single-news.html" class="title f1 fw-7 cw"> <span>Save World By Planting Trees Your Sournding</span>
+                      </a>
+                   </div>
+                </div>
+             </div>
+             <div class="col-md-4">
+                <div class="blog-card">
+                   <a href="single-news.html">
+                   <img src="https://kabadikart.com/assets/front/img/blog/01.jpg" alt="">
+                   </a>
+                   <div class="blog-text">
+                      <div class="date f1 bg3">
+                         <p class="fw-6">Nov</p>
+                         <p class="fw-7">14</p>
+                      </div>
+                      <a href="single-news.html" class="title f1 fw-7 cw"> <span>Eco System Responsible For Green Energy</span>
+                      </a>
+                   </div>
+                </div>
+             </div>
+             <div class="col-md-4">
+                <div class="blog-card">
+                   <a href="single-news.html">
+                   <img src="https://kabadikart.com/assets/front/img/blog/02.jpg" alt="">
+                   </a>
+                   <div class="blog-text">
+                      <div class="date f1 bg3">
+                         <p class="fw-6">Nov</p>
+                         <p class="fw-7">15</p>
+                      </div>
+                      <a href="single-news.html" class="title f1 fw-7 cw"> <span>Don’t Throw Away, Recycle For Your Another Day</span>
+                      </a>
+                   </div>
+                </div>
+             </div>
+             <div class="col-md-4">
+                <div class="blog-card">
+                   <a href="single-news.html">
+                   <img src="https://kabadikart.com/assets/front/img/blog/03.jpg" alt="">
+                   </a>
+                   <div class="blog-text">
+                      <div class="date f1 bg3">
+                         <p class="fw-6">Nov</p>
+                         <p class="fw-7">18</p>
+                      </div>
+                      <a href="single-news.html" class="title f1 fw-7 cw"> <span>You Have The Power Today To Change Tomorrow</span>
+                      </a>
+                   </div>
+                </div>
+             </div>
+             <div class="col-md-4">
+                <div class="blog-card">
+                   <a href="single-news.html">
+                   <img src="e.jpg" alt="">
+                   </a>
+                   <div class="blog-text">
+                      <div class="date f1 bg3">
+                         <p class="fw-6">Jul</p>
+                         <p class="fw-7">30</p>
+                      </div>
+                      <a href="single-news.html" class="title f1 fw-7 cw"> <span>Save World By Planting Trees Your Surrounding</span>
+                      </a>
+                   </div>
+                </div>
+             </div>
+          </div>
+       </div>
+    </div>
+ </div>
+         <div class="contact-middle">
+            <div class="section-header text-center pb-60">
+                <h2 class="f2 c1">contact us</h2>
+                <h1 class="f1 fw-7 c4">Leave a message</h1>
+            </div>
+            <div class="container mt-5">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2 col-sm-offset-0">
+                        <form>
+                            <div class="row">
+                                <div class="col-md-6 mb-30">
+                                    <input type="text" placeholder="First name">
+                                </div>
+                                <div class="col-md-6 mb-30">
+                                    <input type="email" placeholder="Email address">
+                                </div>
+                                <div class="col-md-6 mb-30">
+                                    <input type="text" placeholder="Subject">
+                                </div>
+                                <div class="col-md-6 mb-30">
+                                    <input type="text" placeholder="Website">
+                                </div>
+                                <div class="col-md-12 mb-30">
+                                    <textarea placeholder="Write your message"></textarea>
+                                </div>
+                                <div class="col-md-12 text-center">
+                                    <button type="submit" class="thm-btn cw bg2">send message</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+         
+         <footer  style="background: #2c2929;">
+            <!--<div class="footer-top">-->
+            <!--   <div class="container">-->
+            <!--      <div class="row">-->
+            <!--         <div class="col-sm-6 mb-xs-30">-->
+            <!--            <a href="https://kabadikart.com/">-->
+            <!--            <img src="https://kabadikart.com/assets/kabadi_kart_white.png" alt="">-->
+            <!--            </a>-->
+            <!--         </div>-->
+            <!--         <div class="col-sm-6">-->
+            <!--            <ul class="list-inline text-right">-->
+            <!--               <li><a href="#"><i class="c4 fa fa-twitter"></i></a>-->
+            <!--               </li>-->
+            <!--               <li><a href="#"><i class="c4 fa fa-facebook"></i></a>-->
+            <!--               </li>-->
+            <!--               <li><a href="#"><i class="c4 fa fa-linkedin"></i></a>-->
+            <!--               </li>-->
+            <!--               <li><a href="#"><i class="c4 fa fa-youtube-play"></i></a>-->
+            <!--               </li>-->
+            <!--            </ul>-->
+            <!--         </div>-->
+            <!--      </div>-->
+            <!--   </div>-->
+            <!--</div>-->
+            <div class="footer-middle" style="padding-top: 45px;margin-bottom: 40px;">
+               <div class="container">
+                  <div class="row">
+                     <div class="col-md-6 clearfix mb-sm-50">
+                        <div class="fooler-col f1">
+                           <h2 class="footer-title">Quick Links</h2>
+                           <ul>
+                              <li>    <a href="">Home</a></li>
+                              <li>    <a href="">about Us</a></li>
+                              <li>    <a href="">Why TrashPicker?</a></li>
+                               <li>    <a href="">How we work</a></li> 
+                           
+                           </ul>
+                        </div>
+                        <div class="fooler-col f1">
+                           <h2 class="footer-title">&nbsp;</h2>
+                           <ul>
+                              <li>    <a href="">Request Pickup</a></li>
+                           
+                              <li>    <a href="">contact</a></li>
+                              <li>    <a href="">Privacy Policy</a></li>
+                           </ul>
+                        </div>
+                        <div class="fooler-col f1">
+                           <h2 class="footer-title">Waste</h2>
+                                                      <ul>
+                                                             <li><a href="Blogs.html">Organic Waste</a> </li>
+                                                            <li><a href="Blogs.html">Inorganic Waste</a> </li>
+                                                            <li><a href="Blogs.html">E-Waste</a> </li>
+                                                            
+                                                         </ul>
+                        </div>
+                     </div>
+                     <div class="col-md-3 mb-sm-50">
+                        <div class="footer-contact">
+                            <img src="d.jpg" alt="" style="width: 200px;">
+                           <ul>
+                              <li><i class="fa fa-envelope"></i>satyendrasinghfzd184@gmail.com</li>
+                              <li><i class="fa fa-phone-square"></i>+917080130973</li>
+                           </ul>
+                        </div>
+                     </div>
+                     <div class="col-md-3">
+                        <div class="footer-contact f1">
+                           <h2 class="footer-title">newsletter</h2>
+                           <div class="alert alert-success alert-dismissible" role="alert"  style="display:none"  >
+                              <button type="button" class="close" data-dismiss="alert" aria-label="Close">X</button>
+                                                         </div>
+                           <div class="alert alert-warning alert-dismissible" role="alert"  style="display:none"  >
+                              <button type="button" class="close" data-dismiss="alert" aria-label="Close">X</button>
+                                                         </div>
+                           <form action="" method="post">
+                              <input type="email" name="email" placeholder="Email address">
+                              <button type="submit">Subscribe</button>
+                           </form>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="footer-bottom f1">
+               <div class="container">
+                  <p>© Copyright 2021 by TrashPicker.com</p>
+               </div>
+            </div>
+         </footer>
+         <!-- footer end -->
+      </div>
+      <!-- page-wrapper end -->
+      <div class="back2Top bg1"> <i class="fa fa-angle-up fa-2x cw"></i>
+      </div>
+      
+      <script src="https://kabadikart.com/assets/front/js/jquery-1.12.4.min.js"></script>
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDTPlX-43R1TpcQUyWjFgiSfL_BiGxslZU"></script>
+      <script src="https://kabadikart.com/assets/front/js/html5lightbox/html5lightbox.js"></script>
+      <script src="https://kabadikart.com/assets/front/js/bootstrap.min.js"></script>
+      <script src="https://kabadikart.com/assets/front/js/owl.carousel.js"></script>
+      
+      
+      <script src="https://kabadikart.com/assets/front/js/jquery.enllax.min.js"></script>
+      <script src="https://kabadikart.com/assets/front/js/isotope.js"></script>
+      <script src="https://kabadikart.com/assets/front/js/magnific-popup.js"></script>
+      <script src="https://kabadikart.com/assets/front/js/numscroller-1.0.js"></script>
+      <script src="https://www.jqueryscript.net/demo/jQuery-Plugin-For-Counting-Up-Numbers-While-Scrolling-numscroller/numscroller-1.0.js"></script>
+      <!--<script src="https://kabadikart.com/assets/front/js/jquery.countdown.min.js"></script>-->
+      <script src="https://kabadikart.com/assets/front/js/main.js"></script>
+      <script type="text/javascript">
+         $(document).ready(function () {
+             $('#form_0').on('submit', function (e) {
+                 e.preventDefault();
+                 //    var actionurl = e.currentTarget.action;
+                 //    $.ajax({
+                 //       type: 'post',
+                 //       url: actionurl,
+                 //       data: $('#form_0').serialize(),
+                 //       success: function (result) {
+                 //          if(result == 1)
+                 //          {
+                 $('#step1_form').css('display', 'none');
+                 $('#step2_form').css('display', 'block');
+                 //          }
+                 //       }
+                 //    });
+             });
+ 
+             $('#form_2').on('submit', function (e) {
+                 e.preventDefault();
+                 //    var actionurl = e.currentTarget.action;
+                 //    $.ajax({
+                 //       type: 'post',
+                 //       url: actionurl,
+                 //       data: $('#form_2').serialize(),
+                 //       success: function (result) {
+                 //          if(result == 1)
+                 //          {
+                 $('#step2_form').css('display', 'none');
+                 $('#step3_form').css('display', 'block');
+             })
+             //       }
+             //    });
+             // });
+ 
+             $('#form_3').on('submit', function (e) {
+                 e.preventDefault();
+                 //    var actionurl = e.currentTarget.action;
+                 //    $.ajax({
+                 //       type: 'post',
+                 //       url: actionurl,
+                 //       data: $('#form_3').serialize(),
+                 //       success: function (result) {
+                 //          if(result == 1)
+                 //          {
+                 $('#step3_form').css('display', 'none');
+                 $('#step4_form').css('display', 'block');
+             })
+             //       }
+             //    });
+             // });
+             $('#form_4').on('submit', function (e) {
+                 e.preventDefault();
+                 //    var actionurl = e.currentTarget.action;
+                 //    $.ajax({
+                 //       type: 'post',
+                 //       url: actionurl,
+                 //       data: $('#form_4').serialize(),
+                 //       success: function (result) {
+                 //          if(result == 1)
+                 //          {
+                 // window.location.href = 'https://kabadikart.com/thank-you'
+                 // Swal.fire(
+                 //     'Good job!',
+                 //     'You clicked the button!',
+                 //     'success'
+                 // )
+                 alert("Your request has been succcessfully submitted!!");
+                 // reload();
+                 window.location.reload();   
+             })
+             //   }
+             //    });
+             // });
+         });
+     </script>
+      <script type="text/javascript">
+         $(document).ready(function(){
+            $('.pricingMail').on('click',function(){
+               var pricing = $(this).attr('data-pricing');
+               $('.modal-content #mail_for').val(pricing);
+               $('#centralModalInfo').modal('show');
+            });
+         })
+      </script>
+   </body>
+</html>

@@ -1,0 +1,62 @@
+.about-us {
+    padding-top: 120px;
+    background-image: url(../public/Aboutus-bg.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 900px;
+}
+
+.abt-ws, .was {
+    padding: 0px 0px 0px 50px;
+    margin: 0%;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 60px;
+    display: flex;
+    align-items: center;
+    color: #000000;
+}
+.was{
+    color: #124939;
+    padding: 0px 0px 0px 10px;
+}
+.better {
+    padding: 0px 0px 0px 51px;
+    margin: 0%;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 45px;
+    display: flex;
+    align-items: center;
+
+    color: #000000;
+}
+
+.pg, .pg1, .pg2 {
+    padding: 0px 0px 0px 51px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 38px;
+    display: flex;
+    align-items: center;
+    color: #000000;
+}
+
+.pg{
+    margin-right: 760px;
+}
+
+.pg1{
+    margin-right: 760px;
+}
+
+.pg2{
+    margin-right: 850px;
+}

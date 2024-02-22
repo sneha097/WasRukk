@@ -1,0 +1,50 @@
+.footer_wrapper{
+    width: 100%;
+    box-sizing: border-box;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 18px;
+    margin-top: -50px; 
+    font-family: 'Poppins';
+    
+}
+.footer_{
+    display: flex;
+    flex-direction: column;
+    margin: 5vw 4.5vw 0 4.5vw;
+}
+
+.footer_ li span {
+    font-size:25px;
+    color: green;
+}
+.footer_ input {
+    padding:15px 0; 
+    font-size: large;
+    border-radius: 10px;
+    font-family: 'Poppins';
+
+}
+.footer_ button{
+    padding: 10px 8px;
+    background-color: green;
+    color: white;
+    font-family: 'Poppins';
+    border-radius: 10px;
+    font-size: large;
+    width: 8vw;
+
+}
+
+.footer_ li{
+    margin: 1vw 0;
+    list-style-type: none;
+}
+.footer_ p{
+    margin-top: 5vh;
+    color: green;
+}
